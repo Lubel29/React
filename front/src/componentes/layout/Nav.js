@@ -1,15 +1,20 @@
+import { Link } from "react-router-dom";
 const Nav = (props) => {
-    return(
-        <div class="holder">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="Pasado.html">Nostalgia (1972-1996)</a></li>
-                <li><a href="Decada.html"> Apogeo (1996-2010)</a></li>
-                <li><a href="Hoy.html"> Hoy (2010-actualidad)</a></li>
-                <li><a href="Futuro.html">¿Qué nos depara el futuro del gaming?</a></li>
-            </ul>
-        </div>
-    );
+    return (
+        <nav>
+            <div>
+                <ul>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/Pasado">Nostalgia (1972-1996)</Link></li>
+                    <li><Link to="/Decada"> Apogeo (1996-2010)</Link></li>
+                    <li><Link to="/Hoy"> Hoy (2010-actualidad)</Link></li>
+                    <li><Link to="/Futuro">¿Qué nos depara el futuro del gaming?</Link></li>
+                </ul>
+
+            </div>
+        </nav>
+
+    )
 }
 
 export default Nav;
