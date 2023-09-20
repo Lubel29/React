@@ -1,6 +1,8 @@
-const indexPage = (props) => {
-    return (
+import '../styles/HomePage.css'
 
+const HomePage = (props) => {
+    return (
+<article id="fondo">
         <main className="holder">
             <div className="Titulo de bienvenida">
                 <h2>Las consolas y los videojuegos a través del tiempo</h2>
@@ -32,7 +34,8 @@ const indexPage = (props) => {
             </div>
 
         </main>
+</article >
     )
 }
 
-export default indexPage; 
+export default HomePage; 

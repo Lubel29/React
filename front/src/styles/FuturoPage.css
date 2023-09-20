@@ -1,0 +1,61 @@
+/*Inicio sección Futuro*/
+
+#fondo2 {
+    background-color: rgb(248, 246, 232);
+}
+
+.desenlace p::first-line {
+    color: #400153;
+    font-weight: bold;
+}
+
+
+.fa-solid {
+    font-size: 40px;
+}
+
+.mensaje {
+    display: flex;
+    gap: 30px;
+}
+
+.mensaje div {
+    width: 100%;
+}
+
+.Formulario p {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.Formulario label {
+    min-width: 100px;
+}
+
+
+.Formulario p textarea,
+.Formulario p input {
+    width: 50%;
+    border-radius: 5%;
+    border: 1px solid rgb(152, 34, 231);
+}
+
+.Formulario p textarea {
+    resize: none;
+    width: 450px;
+    height: 200px;
+}
+
+.Formulario input[type="submit"] {
+    background: cadetblue;
+    color: white;
+    width: auto;
+    padding: 10px 20px;
+}
+
+.Formulario input[type="submit"]:hover {
+    background-color: burlywood;
+    cursor: pointer;
+}
+
+/*fin futuro*/

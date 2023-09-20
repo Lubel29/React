@@ -1,0 +1,38 @@
+.Propagandas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 100px;
+    align-content: center;
+
+}
+
+.propagandaRetro p {
+    display: flex;
+    margin-left: auto;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    text-shadow: 0 0 15px #e4e0e0;
+    background: rgba(211, 204, 204, 0.4);
+    font-size: 13px;
+
+}
+
+.propagandaActual p {
+    display: flex;
+    margin-left: auto;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    text-shadow: 0 0 15px #e4e0e0;
+    background: rgba(211, 204, 204, 0.4);
+    font-size: 13px;
+}
+
+#fondo {
+    background: rgba(126, 126, 126, 0.29);
+    background: repeating-linear-gradient(335deg, rgba(126, 126, 126, 0.29) 0%, rgba(226, 214, 174, 0.47) 20%);
+    background: -webkit-repeating-linear-gradient(335deg, rgba(126, 126, 126, 0.29) 0%, rgba(226, 214, 174, 0.47) 20%);
+    background: -moz-repeating-linear-gradient(335deg, rgba(126, 126, 126, 0.29) 0%, rgba(226, 214, 174, 0.47) 20%);
+}
