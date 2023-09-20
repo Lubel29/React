@@ -16,6 +16,12 @@ const HoyPage = (props) => {
                         <li>Xbox 360 </li> <i className="fas fa-headphones" />
                         <li>PS VITA</li> <i className="fas fa-headphones" />
                         <li>Wii U</li> <i className="fas fa-headphones" />
+                        <li>Xbox One</li><i className="fas fa-headphones" ></i>
+                        <li>Ps4 slim</li><i className="fas fa-headphones" ></i>
+                        <li>Ps4 Pro</li><i className="fas fa-headphones" ></i>
+                        <li>Nintendo switch</li><i className="fas fa-headphones" ></i>
+                        <li>Ps5</li><i className="fas fa-headphones" ></i>
+                        <li>Xbox Series S y X</li><i className="fas fa-headphones"></i>
 
                     </ul>
                 </h3>
