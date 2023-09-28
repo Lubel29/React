@@ -30,7 +30,7 @@ const FuturoPage = (props) => {
                     <p>Entre la evolución y la revolución que generaron las consolas a lo largo de estos años,
                         hubo exitos y fracasos, competencia, calidad, y satisfacción del usuario. Muchas perduraron años y
                         fueron exitos imparables, otras , simplemente quedaron en la historia.</p>
-                    <i class="fa-solid fa-gamepad" />
+                    <i class="fa-solid fa-gamepad fa-beat-fade"/>
                     <p>Ahora la pregunta que nos hacemos es ¿Como continuará la vida del gaming y las consolas? La
                         tecnología que ya supera límites extraordinarios, ¿nos llevaran a sumergirnos más en el mundo de los
                         videojuegos? La interfaz entre usuario-consola va a ser sumamente importante y compleja.
