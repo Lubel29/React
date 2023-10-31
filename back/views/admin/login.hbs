@@ -3,7 +3,7 @@
         <div class="col-12 d-flex justify-content-center align-items-center">
             <form action="/admin/login" method="post">
                 <div class="mb-3">
-                    <label for="inputUser" class="form-label">Nombre</label>
+                    <label for="inputUser" class="form-label">Nombre (Insert coin)</label>
                     <input type="text" class="form-control" id="inputUser" placeholder="Usuario" name="usuario">
                 </div>
                <div style="margin-bottom: 20px;"></div>
@@ -15,7 +15,7 @@
                 <button type="submit" class="btn btn-primary" style="background-color: #FDBB2D">Entrar</button>
             </form>
             {{#if error}}
-            <p>Usuario y/o constraseña incorrectos</p>
+            <p>Usuario y/o constraseña incorrectos. GAME OVER</p>
             {{/if}}
         </div>
     </div>
