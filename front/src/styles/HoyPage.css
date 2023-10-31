@@ -31,15 +31,47 @@ p {
 h3 {
     margin: 20px
 }
+
 scroll-container {
     display: block;
     width: 100%;
     height: 400px;
     overflow-y: scroll;
     scroll-behavior: auto;
-  }
-  scroll-page {
+}
+
+scroll-page {
     /* display: flex; */
     align-items: center;
     justify-content: center;
-  }
+}
+
+.Novedades h2 {
+    font-size: 50px;
+    text-align: center;
+    padding: 10px;
+    transition: color 0.3s;
+    cursor: pointer;
+    background: linear-gradient(332deg, rgba(145, 34, 195, 1) 0%, rgba(253, 187, 45, 1) 29%);
+    background-size: 100% 100%;
+    background-position: right;
+    border-radius: 75px;
+}
+
+.Novedades h2:hover {
+    color: #ffffff;
+    background-position: left;
+    background-size: 50% 50%;
+}
+
+
+
+
+
+    
+
+
+
+
+
+

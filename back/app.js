@@ -9,7 +9,7 @@ var session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var loginRouter = require('./routes/admin/login'); 
+var loginRouter = require('./routes/admin/login');
 var adminRouter = require('./routes/admin/pasado');
 
 var app = express();
@@ -26,20 +26,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
   secret: 'PW2021awqyeudj',
-  cookie: {maxAge: null},
+  cookie: { maxAge: null },
   resave: false,
   saveUninitialized: true
 }))
 
-secured = async (req,res,next) => {
+secured = async (req, res, next) => {
   try {
     console.log(req.session.id_usuario);
-    if(req.session.id_usuario) {
+    if (req.session.id_usuario) {
       next();
-    } else{
+    } else {
       res.redirect('/admin/login');
     } /*cierro else*/
-  } catch(error){
+  } catch (error) {
     console.log(error);
   } /*cierro catch error*/
 }/*cierro secured*/
@@ -47,16 +47,16 @@ secured = async (req,res,next) => {
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/admin/login', loginRouter)
-app.use('/admin/pasado',secured,adminRouter);
+app.use('/admin/pasado', secured, adminRouter);
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
