@@ -12,7 +12,7 @@ body {
 
 header {
   color: rgb(68, 10, 68);
-  font-size: 20px;
+  font-size: 40px;
   font-weight: 100;
   display: inline-block;
   position: relative;
@@ -47,13 +47,14 @@ footer {
 
 p {
   font-family: 'Source Code Pro', monospace;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 nav {
   background: linear-gradient(332deg, rgba(145, 34, 195, 1) 0%, rgba(253, 187, 45, 1) 29%);
   margin-bottom: 0rem;
-  padding: 20px;
+  padding: 25px;
+  font-size: 18px;
  
 }
 

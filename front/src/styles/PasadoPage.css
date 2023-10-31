@@ -17,14 +17,28 @@ aside {
 
 h4 {
     text-align: center;
-    font-size: medium;
+    font-size: 20px;
+}
+
+blockquote{
+    font-size: 18px;
 }
 
 .Cajapasado {
-
     display: flex;
-    margin: auto;
+}
 
+.intropasado p {
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.Cajapasado h3{
+    margin-left: 2%;
+}
+
+.intropasado h2{
+    margin-left: 2%;
 }
 
 .Consola {
@@ -36,6 +50,8 @@ h4 {
     margin: auto;
     text-align: center;
     transition: all 3s ease;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
 .Consola img {

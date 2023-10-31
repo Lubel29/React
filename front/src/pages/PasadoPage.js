@@ -17,18 +17,19 @@ const PasadoPage = (props) => {
 
                 <div className="Cajapasado">
                     <main className="holder">
-                        <h2>Momento nostalgico (1972-1996)</h2>
+                        <div className="intropasado">
+                            <h2>Momento nostalgico (1972-1996)</h2>
 
-                        <p>Las primera consolas fueron producto de investigacion y desarrollo y tuvieron lugar en la decada de los
-                            60s sin fines comerciales, pero con gran exito para inspirar a creadores a ir por más y combinar el
-                            entretenimiento de la tv con un condimento dinámico.</p>
-                        <p> A partir de esto, a principios de los 70s se lanzó la primera consola al mercado, la cual llamaron
-                            "Magnavox Odyssey" y a partir de ahí emergieron muchas más las cuales hoy en día seguimos incluso
-                            disfrutando.</p>
-                        <p> Los invito a un recorrido por nuestro pasado gaming!</p>
+                            <p>Las primera consolas fueron producto de investigacion y desarrollo y tuvieron lugar en la decada de los
+                                60s sin fines comerciales, pero con gran exito para inspirar a creadores a ir por más y combinar el
+                                entretenimiento de la tv con un condimento dinámico.</p>
+                            <p> A partir de esto, a principios de los 70s se lanzó la primera consola al mercado, la cual llamaron
+                                "Magnavox Odyssey" y a partir de ahí emergieron muchas más las cuales hoy en día seguimos incluso
+                                disfrutando.</p>
+                            <p> Los invito a un recorrido por nuestro pasado gaming!</p>
 
-                        <hr />
-
+                            <hr />
+                        </div>
                         <h3>Consolas 70s 80s 90s</h3>
 
                         <div className="Consola">

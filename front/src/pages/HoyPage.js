@@ -2,38 +2,39 @@ import '../styles/HoyPage.css'
 const HoyPage = (props) => {
     return (
         <main className="holder">
+            <div className="actualidad">
+                <h2>La actualidad</h2>
+                <p>Podriamos decir que nos encontramos en la octava generación, cada consola iba evolucionando a pasos
+                    agigantados, definicion HD, reproducción con blu ray,controles con sensor de movimiento, consolas
+                    portatiles con definicion de alta calidad, etc.
+                    <b>Terreno firme para Sony y Microsoft, dos potencias que se encuentran al día de hoy CARA A CARA.</b>
+                </p>
 
-            <h2>La actualidad</h2>
-            <p>Podriamos decir que nos encontramos en la octava generación, cada consola iba evolucionando a pasos
-                agigantados, definicion HD, reproducción con blu ray,controles con sensor de movimiento, consolas
-                portatiles con definicion de alta calidad, etc.
-                <b>Terreno firme para Sony y Microsoft, dos potencias que se encuentran al día de hoy CARA A CARA.</b>
-            </p>
-
-            <nav>
-                <h4>
-                    <ul>
-                        <i className="fas fa-headphones" ></i>
-                        <li><a href="#Xbox360">Xbox 360</a></li><i className="fas fa-headphones"
-                        ></i>
-                        <li><a href="#Ps Vita">Ps Vita</a></li><i className="fas fa-headphones"
-                        ></i>
-                        <li><a href="#Wii u">Wii u</a></li><i className="fas fa-headphones"
-                        ></i>
-                        <li><a href="#Xboxone">Xbox One</a></li><i className="fas fa-headphones"
-                        ></i>
-                        <li><a href="#Ps4">Ps4</a></li><i className="fas fa-headphones"
-                        ></i>
-                        <li><a href="#Ps4pro">Ps4 Pro</a></li><i className="fas fa-headphones"
-                        ></i>
-                        <li><a href="#NintendoSwitch">Nintendo Switch</a></li><i className="fas fa-headphones"
-                        ></i>
-                        <li><a href="#Ps5">Ps5</a></li><i className="fas fa-headphones"
-                        ></i>
-                        <li><a href="#XboxSeries">Xbox Series S y X</a></li>
-                    </ul>
-                </h4>
-            </nav>
+                <nav>
+                    <h4>
+                        <ul>
+                            <i className="fas fa-headphones" ></i>
+                            <li><a href="#Xbox360">Xbox 360</a></li><i className="fas fa-headphones"
+                            ></i>
+                            <li><a href="#Ps Vita">Ps Vita</a></li><i className="fas fa-headphones"
+                            ></i>
+                            <li><a href="#Wii u">Wii u</a></li><i className="fas fa-headphones"
+                            ></i>
+                            <li><a href="#Xboxone">Xbox One</a></li><i className="fas fa-headphones"
+                            ></i>
+                            <li><a href="#Ps4">Ps4</a></li><i className="fas fa-headphones"
+                            ></i>
+                            <li><a href="#Ps4pro">Ps4 Pro</a></li><i className="fas fa-headphones"
+                            ></i>
+                            <li><a href="#NintendoSwitch">Nintendo Switch</a></li><i className="fas fa-headphones"
+                            ></i>
+                            <li><a href="#Ps5">Ps5</a></li><i className="fas fa-headphones"
+                            ></i>
+                            <li><a href="#XboxSeries">Xbox Series S y X</a></li>
+                        </ul>
+                    </h4>
+                </nav>
+            </div>
 
             <scroll-container>
                 <scroll-page id="Xbox360">

@@ -78,7 +78,9 @@ aside.datocurioso {
 .Consolasapogeo {
     display: flex;
     gap: 10px;
-    margin: auto;
+    margin-right: 10%;
+    margin-left: 10%;
+
 }
 
 .Consolastipo {

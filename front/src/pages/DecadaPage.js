@@ -25,7 +25,7 @@ const Decada = (props) => {
 
                 <div className="CajaApogeo">
                     <h2>Finales del siglo XX y comienzo del Siglo XXI</h2>
-                    <p>Termina un siglo muy movida y comienzan los años 2000, y la evolución en las consolas cada vez se
+                    <p>Termina un siglo muy movido y comienzan los años 2000, y la evolución en las consolas cada vez se
                         pone más
                         marcada, las competencias en el mercado más fuertes y los usuarios cada vez más locos.
                         Los joystick ergonómicos para horas de juegos, con sistema de vibración, gatillos, palancas y luces,
@@ -34,7 +34,7 @@ const Decada = (props) => {
                         Comienza la era de los 128 bits, del juego online, la salida de video se adaptan a las nuevas tv
                         Smart con
                         HD.
-                        Y una empresa clave en el mundo de las consolas... Microsoft.</p>
+                        Y una empresa clave en el mundo de las consolas... <strong>Microsoft.</strong></p>
                 </div>
 
                 <div className="Consolasapogeo">
