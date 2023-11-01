@@ -4,6 +4,11 @@
     background-color: rgb(248, 246, 232);
 }
 
+.desenlace h3{
+    margin-left: 25%;
+    margin-top: 5%;
+}
+
 .desenlace p::first-line {
     color: #400153;
     font-weight: bold;
@@ -36,7 +41,6 @@
 .Formulario p textarea,
 .Formulario p input {
     width: 50%;
-    border-radius: 5%;
     border: 1px solid rgb(152, 34, 231);
 }
 
@@ -47,7 +51,7 @@
 }
 
 .Formulario input[type="submit"] {
-    background: cadetblue;
+    background: #F5B035;
     color: white;
     width: auto;
     padding: 10px 20px;
@@ -58,4 +62,12 @@
     cursor: pointer;
 }
 
+#mensaje{
+    font-size: medium;
+}
+
+.form h3{
+    margin-left: 15%;
+    margin-top: 5%;
+}
 /*fin futuro*/

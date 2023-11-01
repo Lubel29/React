@@ -1,4 +1,4 @@
-const Header = (proprs) => {
+const Header = (props) => {
     return(
         <header>
         <div class="holder">
