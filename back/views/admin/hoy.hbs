@@ -1,6 +1,55 @@
-<h2> Bienvenid@ {{persona}} !</h2>
+<h3> Bienvenid@ {{persona}} !</h3>
 <div class="container" style="margin-top: 50px;">
-    <div class="row">
-        <p class="text-end">Gracias por tu visita {{persona}} <a type="button" class="btn btn-warning" href="/admin/login/logout">Cerrar Sesión</a></p>
+
+</div>
+
+<div class="container text-center">
+  <div class="row aling-items-start">
+    <div class="col">
+      <h2>Noticias y Novedades</h2>
     </div>
+    <div class="row aling-items-start">
+      <div class="col">
+        <a class="btn btn-sucess" href="/admin/hoy/agregar" style="background:rgb(193,107,218)"><i class="fa fa-plus"
+            aria-hidden="true"></i>Nuevo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead>
+          <tr class="table-dark">
+            <th scope="col">#</th>
+            <th scope="col">Titulo</th>
+
+            <th class="text-center">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each hoy}}
+          <tr>
+            <th scope="row">{{id}}</th>
+            <td>{{titulo}}</td>
+            <td class="text-center">
+              <a class="btn btn-secondary" href=""><i class="fa fa-pencil" aria-hidden="true"></i></a>
+              <a class="btn btn-secondary" href=""><i class="fa fa-trash" aria-hidden="true"></i></a>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="row">
+  <p class="text-end">Gracias por tu visita {{persona}} <a type="button" class="btn btn-warning"
+      href="/admin/login/logout">Cerrar Sesión</a></p>
 </div>
