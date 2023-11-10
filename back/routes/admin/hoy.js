@@ -39,7 +39,47 @@ router.post('/agregar', async (req,res,next)=>{
   } catch(error){
     console.log(error)
     res.render('admin/agregar',{
-      layout:'admin/layout'
+      layout:'admin/layout',
+      error: true,
+      message: 'No se cargo la novedad'
+    })
+  }
+})
+
+router.get('/eliminar/:id', async (req,res,next) =>{
+  var id= req.params.id;
+
+  await hoyModel.deleteHoyById(id);
+  res.redirect('/admin/hoy');
+});
+
+/*para que me traiga una sola ID de novedades para que yo pueda modificar*/
+
+router.get('/modificar/:id', async(req,res,next) => {
+
+  let id = req.params.id;
+  let hoy = await hoyModel.getHoyById(id);
+  res.render('admin/modificar', {
+    layout: 'admin/layout',
+    hoy
+  });
+});
+
+router.post('/modificar', async(req,res,next)=>{
+  try {
+    let obj= {
+      titulo: req.body.titulo,
+      subtitulo: req.body.Subtitulo,
+      cuerpo:req.body.Cuerpo
+    }
+    await hoyModel.modificarHoyById(obj,req.body.id);
+    res.redirect('/admin/hoy');
+  }
+  catch(error) {
+    console.log(error)
+    res.render('admin/modificar',{
+      layout:'admin/layout',
+      error: true, message: 'No se modifico la novedad'
     })
   }
 })
