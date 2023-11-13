@@ -29,8 +29,6 @@ router.post('/agregar', async (req, res, next) => {
   try {
 
     let img_id = '';
-
-
     if (req.files && Object.keys(req.files).length > 0) {
       imagen = req.files.imagen;
       img_id = (await uploader(image.tempFilePath)).public_id;
