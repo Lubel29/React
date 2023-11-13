@@ -1,7 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var hoyModel = require('../../models/hoyModel');
-
+const util = require('util');
+const cloudinary = require('cloudinary').v2;
+const uploader = util.promisify(cloudinary.uploader.upload);
 
 
 router.get('/', async function (req, res, next) {
@@ -9,45 +11,56 @@ router.get('/', async function (req, res, next) {
   var hoy = await hoyModel.getHoy();
 
   res.render('admin/hoy', {
-    layout:'admin/layout',
+    layout: 'admin/layout',
     usuario: req.session.nombre,
     persona: req.session.nombre,
     hoy
-   });
+  });
 });
 
 
-router.get('/agregar',(req,res,next) =>{
-  res.render('admin/agregar',{
-    layout:'admin/layout'
+router.get('/agregar', (req, res, next) => {
+  res.render('admin/agregar', {
+    layout: 'admin/layout'
   })
 })
 
-router.post('/agregar', async (req,res,next)=>{
-  try{
-    
-    if (req.body.titulo != "" && req.body.subtitulo != "" && req.body.cuerpo != ""){
-      await hoyModel.insertHoy(req.body);
+router.post('/agregar', async (req, res, next) => {
+  try {
+
+    let img_id = '';
+
+
+    if (req.files && Object.keys(req.files).length > 0) {
+      imagen = req.files.imagen;
+      img_id = (await uploader(image.tempFilePath)).public_id;
+    }
+
+    if (req.body.titulo != "" && req.body.Subtitulo != "" && req.body.Cuerpo != "") {
+      await hoyModel.insertHoy({
+        ...req.body,
+        img_id
+      });
       res.redirect('/admin/hoy/')
-    } else{
-      res.render('admin/agregar',{
+    } else {
+      res.render('admin/agregar', {
         layout: 'admin/layout',
-        error:true,
+        error: true,
         message: 'Todos los campos son requeridos'
       })
     }
-  } catch(error){
+  } catch (error) {
     console.log(error)
-    res.render('admin/agregar',{
-      layout:'admin/layout',
+    res.render('admin/agregar', {
+      layout: 'admin/layout',
       error: true,
       message: 'No se cargo la novedad'
     })
   }
 })
 
-router.get('/eliminar/:id', async (req,res,next) =>{
-  var id= req.params.id;
+router.get('/eliminar/:id', async (req, res, next) => {
+  var id = req.params.id;
 
   await hoyModel.deleteHoyById(id);
   res.redirect('/admin/hoy');
@@ -55,7 +68,7 @@ router.get('/eliminar/:id', async (req,res,next) =>{
 
 /*para que me traiga una sola ID de novedades para que yo pueda modificar*/
 
-router.get('/modificar/:id', async(req,res,next) => {
+router.get('/modificar/:id', async (req, res, next) => {
 
   let id = req.params.id;
   let hoy = await hoyModel.getHoyById(id);
@@ -65,20 +78,20 @@ router.get('/modificar/:id', async(req,res,next) => {
   });
 });
 
-router.post('/modificar', async(req,res,next)=>{
+router.post('/modificar', async (req, res, next) => {
   try {
-    let obj= {
+    let obj = {
       titulo: req.body.titulo,
       subtitulo: req.body.Subtitulo,
-      cuerpo:req.body.Cuerpo
+      cuerpo: req.body.Cuerpo
     }
-    await hoyModel.modificarHoyById(obj,req.body.id);
+    await hoyModel.modificarHoyById(obj, req.body.id);
     res.redirect('/admin/hoy');
   }
-  catch(error) {
+  catch (error) {
     console.log(error)
-    res.render('admin/modificar',{
-      layout:'admin/layout',
+    res.render('admin/modificar', {
+      layout: 'admin/layout',
       error: true, message: 'No se modifico la novedad'
     })
   }

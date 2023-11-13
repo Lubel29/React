@@ -1,12 +1,15 @@
 <div class="row">
     <div class="col-6 offset-3" style="margin-top:50px">
         <h4>Agregar noticia y/o info</h4>
-        <form action="/admin/hoy/agregar" method="post">
+        <form action="/admin/hoy/agregar" method="post" enctype="multipart/form-data">
             <div class="mb-3 row">
                 <input type="text" class="form-control" placeholder="Titulo" name="titulo">
             </div>
             <div class="mb-3 row">
                 <input type="text" class="form-control" placeholder="Subtitulo" name="subtitulo">
+            </div>
+            <div class="mb-3 row">
+                <label>Imagen:<input type="file" class="form-control" name="" id="" /></label>
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Cuerpo</label>
