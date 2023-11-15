@@ -23,10 +23,10 @@
       <table class="table">
         <thead>
           <tr class="table-dark">
-            <th scope="col">#</th>
-            <th scope="col">Titulo</th>
-
-            <th class="text-center">Acciones</th>
+            <th scope="">#</th>
+            <th scope="">Titulo</th>
+            <th scope="">Imagen</th>  
+            <th class="">Acciones</th>          
           </tr>
         </thead>
         <tbody>
@@ -34,7 +34,8 @@
           <tr>
             <th scope="row">{{id}}</th>
             <td>{{titulo}}</td>
-            <td class="text-center">
+            <td>{{{imagen}}}</td>
+            <td class="text-end">
               <a class="btn btn-secondary" href="/admin/hoy/modificar/{{id}}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
               <a class="btn btn-secondary" href="/admin/hoy/eliminar/{{id}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
             </td>

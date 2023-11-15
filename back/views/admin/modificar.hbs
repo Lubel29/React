@@ -4,20 +4,32 @@
             <h4>Modificar</h4>
             <form method="post" action="/admin/hoy/modificar" enctype="multipart/form-data">
                 <input type="hidden" value="{{hoy.id}}" name="id">
-                <div class="form-group">
+
+                <div class="mb-3 row">
                     <input type="text" placeholder="Título" value="{{hoy.titulo}}" class="form-control" name="titulo">
                 </div>
-                <div class="form-group">
-                    <textarea placeholder="Subtitulo" class="form-control" name="subtitulo">{{hoy.subtitulo}}</textarea>
-                </div>
+
                 <div class="mb-3 row">
-                    <label>Imagen:<input type="file" class="form-control" name="imagen" id="imagen" /></label>
+                    <textarea placeholder="Subtitulo" class="form-control" name="Subtitulo">{{hoy.Subtitulo}}</textarea>
+                </div>
+
+                <div class="mb-3 row">
+                    <p>
+                        <label>Imagen:<input type="file" class="form-control" name="imagen" id="imagen" /></label>
+                    </p>
+                    <p>
+                        <label><input type="checkbox" name="img_delete" id="img_delete" value="1">
+                            Eliminar imagen actual?</label>
+                        <input type="hidden" name="img_original" value="{{hoy.img_id}}">
+                    </p>
                 </div>
 
                 <div class="form-group">
-                    <textarea placeholder="Cuerpo" class="form-control" name="cuerpo">{{hoy.cuerpo}}</textarea>
+                    <textarea placeholder="Cuerpo" class="form-control" name="Cuerpo">{{hoy.Cuerpo}}</textarea>
                 </div>
+
                 <button type="submit" class="btn btn-primary">Modificar</button>
+
             </form>
             {{#if error}}
             <h5>{{message}}</h5>
