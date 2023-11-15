@@ -28,15 +28,17 @@ router.get('/agregar', (req, res, next) => {
 router.post('/agregar', async (req, res, next) => {
   try {
 
-    let img_id = '';
+    var img_id = ''; /*al principio está vacia*/
+    console.log(req.files.imagen);
+
     if (req.files && Object.keys(req.files).length > 0) {
       imagen = req.files.imagen;
-      img_id = (await uploader(image.tempFilePath)).public_id;
+      img_id = (await uploader(imagen.tempFilePath)).public_id;
     }
 
     if (req.body.titulo != "" && req.body.Subtitulo != "" && req.body.Cuerpo != "") {
       await hoyModel.insertHoy({
-        ...req.body,
+        ...req.body, /*titulo,sub,cuerpo*/
         img_id
       });
       res.redirect('/admin/hoy/')
@@ -69,6 +71,7 @@ router.get('/eliminar/:id', async (req, res, next) => {
 router.get('/modificar/:id', async (req, res, next) => {
 
   let id = req.params.id;
+  console.log(req.params.id);
   let hoy = await hoyModel.getHoyById(id);
   res.render('admin/modificar', {
     layout: 'admin/layout',
@@ -80,8 +83,8 @@ router.post('/modificar', async (req, res, next) => {
   try {
     let obj = {
       titulo: req.body.titulo,
-      subtitulo: req.body.Subtitulo,
-      cuerpo: req.body.Cuerpo
+      Subtitulo: req.body.Subtitulo,
+      Cuerpo: req.body.Cuerpo
     }
     await hoyModel.modificarHoyById(obj, req.body.id);
     res.redirect('/admin/hoy');
