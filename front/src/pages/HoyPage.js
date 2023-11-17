@@ -20,7 +20,8 @@ const HoyPage = (props) => {
     return (
         <main className="holder">
             <div className="actualidad">
-                <h2>La actualidad</h2>
+                <h2>Consolas actuales (2010-hoy) y Novedades del mundo gaming
+                </h2>
                 <p>Podriamos decir que nos encontramos en la octava generación, cada consola iba evolucionando a pasos
                     agigantados, definicion HD, reproducción con blu ray,controles con sensor de movimiento, consolas
                     portatiles con definicion de alta calidad, etc.
