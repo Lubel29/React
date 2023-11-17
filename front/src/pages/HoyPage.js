@@ -1,5 +1,22 @@
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import HoyItem from '../componentes/hoy/HoyItem';
+
 import '../styles/HoyPage.css'
 const HoyPage = (props) => {
+    const [loading, setLoading] = useState(false);
+    const [hoy, setHoy] = useState([]);
+
+    useEffect(() => {
+        const cargarHoy = async () => {
+            setLoading(true);
+            const response = await axios.get('http://localhost:3000/api/hoy');
+            setHoy(response.data);
+            setLoading(false);
+        };
+
+        cargarHoy();
+    }, []);
     return (
         <main className="holder">
             <div className="actualidad">
@@ -167,18 +184,56 @@ const HoyPage = (props) => {
                 </scroll-page>
             </scroll-container>
             <hr />
-
             < div class="Novedades">
 
                 <h2>NOVEDADES</h2>
-
                 <p>Te actualizamos sobre novedades del mundo gaming, lanzamiento de consolas, lanzamiento de juegos, mundo streaming, y mas noticias a tiempo real!</p>
             </div>
+            
+            <div className="slider-box">
+                <ul className="slider">
+                    <li>
+                        <img src="img/Hoy/gamepass.jpg" alt="gamespass"/>
+                    </li>
+                    <li>
+                        <img src="img/Hoy/juegosps4.jpg" alt="ps4juegos"/>
+                    </li>
+                    <li>
+                        <img src="img/Hoy/switchjuegos.jpg" alt="switchjuegos"/>
+                    </li>
+                    <li>
+                        <img src="img/Hoy/gamepass.jpg" alt="gamespass"/>
+                    </li>
+                    <li>
+                        <img src="img/Hoy/juegosps4.jpg" alt="ps4juegos"/>
+                    </li>
+                    <li>
+                        <img src="img/Hoy/switchjuegos.jpg" alt="switchjuegos"/>
+                    </li>
+                    <li>
+                        <img src="img/Hoy/gamepass.jpg" alt="gamespass"/>
+                    </li>
+                    <li>
+                        <img src="img/Hoy/juegosps4.jpg" alt="ps4juegos"/>
+                    </li>
+                    <li>
+                        <img src="img/Hoy/switchjuegos.jpg" alt="switchjuegos"/>
+                    </li>
+                </ul>
+            </div>
 
-
-        </main >
+            {
+                loading ? (
+                    <p>Cargando...</p>
+                ) : (
+                    hoy.map(item => <HoyItem key={item.id}
+                        title={item.titulo} subtitle={item.Subtitulo}
+                        imagen={item.imagen} body={item.Cuerpo} />)
+                )
+            }
+        </main>
     )
-}
+};
 
 
 export default HoyPage;
