@@ -1,38 +1,68 @@
-import React, { useState } from 'react';
 import '../styles/FuturoPage.css';
+import { useState } from 'react';
+import axios from 'axios';
 
 const FuturoPage = (props) => {
-    const [contentLength, setContentLength] = useState(0);
 
-    const handleContentChange = (event) => {
-        const newContent = event.target.value;
-        setContentLength(newContent.length);
+    const initialForm = {
+        nombre: '',
+        apellido: '',
+        mensaje: ''
+    };
+    const [sending, setSending] = useState(false);
+    const [msg, setMsg] = useState('');
+    const [formData, setFormData] = useState(initialForm);
+
+    const handleChange = e => {
+        const { name, value } = e.target;
+        setFormData(oldData => ({
+            ...oldData,
+            [name]: value
+        }));
     };
 
+    const handleSubmit = async e => {
+        e.preventDefault();
+        setMsg('');
+        setSending(true);
+        try {
+            const response = await axios.post('http://localhost:3000/api/futuro', formData);
+            setSending(response.data.message);
+            if (response.data.error === false) {
+                setFormData(initialForm);
+                setMsg('Mensaje enviado');
+            }
+        } catch (error) {
+            setSending(false);
+            setMsg('Hubo un error al enviar el formulario');
+        } finally {
+            setSending(false);
+        }
+    };
     return (
         <article id="fondo2">
             <main className="holder mensaje">
                 <div className='form'>
                     <h3>Comentarios o sugerencias</h3>
-                    <form action="" method="" className="Formulario">
+                    <form action="/futuro" method="post" onSubmit={handleSubmit} className="Formulario">
                         <p>
                             <label htmlFor="nombre">Nombre</label>
-                            <input type="text" name="nombre" placeholder="" onChange={handleContentChange} />
+                            <input type="text" name="nombre" value={formData.nombre} onChange={handleChange} placeholder="" />
                         </p>
                         <p>
                             <label htmlFor="apellido">Apellido</label>
-                            <input type="text" name="apellido" placeholder="" />
+                            <input type="text" name="apellido" value={formData.apellido} onChange={handleChange} placeholder="" />
                         </p>
                         <p>
                             <label htmlFor="mensaje">Mensaje</label>
-                            <textarea name="contenido" placeholder="Inserte mensaje" onChange={handleContentChange}></textarea>
+                            <textarea name="mensaje" value={formData.mensaje} onChange={handleChange} placeholder="Inserte mensaje"></textarea>
                         </p>
-                        <div id="mensaje">Contador de caracteres: {contentLength}</div>
                         <p className="acciones"><input type="submit" value="Enviar" /></p>
                     </form>
+                    {sending ? <p>Enviando...</p> : null}
+                    {msg && !sending ? <p>{msg}</p> : null}
 
                 </div>
-
                 <div className="desenlace">
                     <h3>Mirando hacia el futuro</h3>
                     <p>Entre la evolución y la revolución que generaron las consolas a lo largo de estos años,

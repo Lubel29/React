@@ -29,11 +29,11 @@ router.get('/hoy', async function(req,res,next) {
     res.json(hoy);
 });
 
-router.post('/contacto',async(req,res) => {
+router.post('/futuro', async (req,res) => {
     const mail = {
         to: 'lucia.belmonte17.lb@gmail.com',
         subject:'Contacto web',
-        html: `${req.body.nombre} se contacto a traves de la web y quiere mas informacion a este correo: ${req.body.email}<br> Además, hizo el siguiente comentario: ${req.body.mensaje} <br> Su tel es: ${req.body.telefono}`
+        html: `${req.body.nombre} se contacto a traves de la web <br> Hizo el siguiente comentario: ${req.body.mensaje}`
     }
 
    const transport = nodemailer.createTransport({
