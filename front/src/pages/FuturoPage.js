@@ -26,7 +26,7 @@ const FuturoPage = (props) => {
         setMsg('');
         setSending(true);
         try {
-            const response = await axios.post('http://localhost:3000/api/futuro', formData);
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/futuro`, formData);
             setSending(response.data.message);
             if (response.data.error === false) {
                 setFormData(initialForm);
