@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     max-width: 1200px;
-    margin: auto ;
+    margin: 0 auto ;
     padding: 30px;
     width: 50%;
     margin-bottom: 10%;
@@ -13,11 +13,11 @@
 
 .CajaApogeo h2{
     justify-content: center;
-    margin: auto;
+    margin: 0 auto;
     padding: 0px;
     width: 50%;
     margin-bottom: 10%;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 
