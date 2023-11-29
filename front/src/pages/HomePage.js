@@ -23,7 +23,7 @@ const HomePage = (props) => {
             </div>
             <div className="Propagandas">
                 <div className="propagandaRetro">
-                    <img src="img/Home/comercial magnavox.jpg" alt="comercial"/>
+                    <img src="img/Home/comercialmagnavox.jpg" alt="comercial"/>
 
                         <p>Propaganda de la primera consola de la historia, "Magnavox Odyssey"</p>
                 </div>
