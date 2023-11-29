@@ -7,6 +7,7 @@
 
 }
 
+
 .propagandaRetro p {
     display: flex;
     margin-left: auto;
@@ -36,4 +37,9 @@
     background: -webkit-repeating-linear-gradient(335deg, rgba(126, 126, 126, 0.29) 0%, rgba(226, 214, 174, 0.47) 20%);
     background: -moz-repeating-linear-gradient(335deg, rgba(126, 126, 126, 0.29) 0%, rgba(226, 214, 174, 0.47) 20%);
 
+}
+
+.propagandaRetro img {
+    width: 600px;
+    height: 360px;
 }
