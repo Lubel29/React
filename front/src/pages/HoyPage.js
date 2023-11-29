@@ -191,35 +191,35 @@ const HoyPage = (props) => {
                 <h2>NOVEDADES</h2>
                 <p>Te actualizamos sobre novedades del mundo gaming, lanzamiento de consolas, lanzamiento de juegos, mundo streaming, y mas noticias a tiempo real!</p>
             </div>
-            
+
             <div className="slider-box">
                 <ul className="slider">
                     <li>
-                        <img src="img/Hoy/gamepass.jpg" alt="gamespass"/>
+                        <img src="img/Hoy/gamepass.jpg" alt="gamespass" />
                     </li>
                     <li>
-                        <img src="img/Hoy/juegosps4.jpg" alt="ps4juegos"/>
+                        <img src="img/Hoy/juegosps4.jpg" alt="ps4juegos" />
                     </li>
                     <li>
-                        <img src="img/Hoy/switchjuegos.jpg" alt="switchjuegos"/>
+                        <img src="img/Hoy/switchjuegos.jpg" alt="switchjuegos" />
                     </li>
                     <li>
-                        <img src="img/Hoy/gamepass.jpg" alt="gamespass"/>
+                        <img src="img/Hoy/gamepass.jpg" alt="gamespass" />
                     </li>
                     <li>
-                        <img src="img/Hoy/juegosps4.jpg" alt="ps4juegos"/>
+                        <img src="img/Hoy/juegosps4.jpg" alt="ps4juegos" />
                     </li>
                     <li>
-                        <img src="img/Hoy/switchjuegos.jpg" alt="switchjuegos"/>
+                        <img src="img/Hoy/switchjuegos.jpg" alt="switchjuegos" />
                     </li>
                     <li>
-                        <img src="img/Hoy/gamepass.jpg" alt="gamespass"/>
+                        <img src="img/Hoy/gamepass.jpg" alt="gamespass" />
                     </li>
                     <li>
-                        <img src="img/Hoy/juegosps4.jpg" alt="ps4juegos"/>
+                        <img src="img/Hoy/juegosps4.jpg" alt="ps4juegos" />
                     </li>
                     <li>
-                        <img src="img/Hoy/switchjuegos.jpg" alt="switchjuegos"/>
+                        <img src="img/Hoy/switchjuegos.jpg" alt="switchjuegos" />
                     </li>
                 </ul>
             </div>
@@ -228,10 +228,14 @@ const HoyPage = (props) => {
                 loading ? (
                     <p>Cargando...</p>
                 ) : (
-                    hoy.map(item => <HoyItem key={item.id}
-                        title={item.titulo} subtitle={item.Subtitulo}
-                        imagen={item.imagen} body={item.Cuerpo} />)
-                )
+                    hoy.map(item => (
+                        <HoyItem
+                            key={item.id}
+                            title={item.titulo}
+                            subtitle={item.Subtitulo}
+                            imagen={item.imagen}
+                            body={item.Cuerpo} />)
+                    ))
             }
         </main>
     )
